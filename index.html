@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Zkoo Studio • Applications</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <div class="noise"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <canvas id="confetti" style="position:fixed;inset:0;pointer-events:none;z-index:50;"></canvas>
+
+  <header>
+    <div class="nav wrap">
+      <div class="brand">
+        <img class="logo" src="https://images.placeholders.dev/?width=256&height=256&text=ZS&bgColor=%23101833&textColor=%23ffffff" alt="Zkoo Studio" />
+        <div>
+          <h1>Zkoo Studio</h1>
+          <p>Applications portal</p>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a class="link" href="#apply">Apply</a>
+        <a class="link" href="#roles">Roles</a>
+        <a class="link" href="#process">Process</a>
+        <a class="link" href="#about">About</a>
+        <a class="link" href="#faq">FAQ</a>
+        <a class="btn pill" id="navApply" href="#apply">Start now</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero wrap reveal">
+    <div class="parallax" aria-hidden="true">
+      <div class="p-layer p1" data-depth="0.06"></div>
+      <div class="p-layer p2" data-depth="0.12"></div>
+      <div class="p-layer p3" data-depth="0.18"></div>
+    </div>
+
+    <div class="eyebrow">Now accepting applications</div>
+    <h2>Build with a team that ships</h2>
+    <p>Submit for developer, moderator, builder or designer, and marketing roles. Every application is posted to our Discord with a professional embed and a unique ticket id.</p>
+    <div class="actions">
+      <button class="cta" id="heroApply">Start application</button>
+      <a class="cta secondary" href="#about">Learn more</a>
+    </div>
+
+    <div class="grid-3 tiles" style="margin-top:24px">
+      <div class="card tile reveal" data-tilt>
+        <div class="shine"></div>
+        <h4>Fast reviews</h4>
+        <p>Direct to our staff channel with timestamps and structured fields.</p>
+      </div>
+      <div class="card tile reveal" data-tilt>
+        <div class="shine"></div>
+        <h4>Simple and fair</h4>
+        <p>One form for all tracks. Clear expectations and friendly feedback.</p>
+      </div>
+      <div class="card tile reveal" data-tilt>
+        <div class="shine"></div>
+        <h4>Modern stack</h4>
+        <p>Static page, lightweight JS, smooth micro-interactions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="roles" class="section wrap">
+    <h3 class="center" style="margin:0 0 16px">Open tracks</h3>
+    <div class="grid-4">
+      <div class="role reveal" data-tilt>
+        <div class="ic">💻</div>
+        <div>
+          <h5>Developer</h5>
+          <p>Gameplay features, automation, tooling. Comfortable with version control and debugging.</p>
+        </div>
+      </div>
+      <div class="role reveal" data-tilt>
+        <div class="ic">🛡️</div>
+        <div>
+          <h5>Moderator</h5>
+          <p>Community-first. Calm in heated moments. Clear communication and good judgment.</p>
+        </div>
+      </div>
+      <div class="role reveal" data-tilt>
+        <div class="ic">🎨</div>
+        <div>
+          <h5>Builder or Designer</h5>
+          <p>Environments, UI polish, visual identity. Eye for detail and consistency.</p>
+        </div>
+      </div>
+      <div class="role reveal" data-tilt>
+        <div class="ic">📢</div>
+        <div>
+          <h5>Marketing or Comms</h5>
+          <p>Announcements, campaigns, social presence. Data-guided and creative.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section wrap">
+    <div class="grid-2">
+      <div class="card reveal">
+        <h3>About Zkoo Studio</h3>
+        <p>We are a small team shipping community-driven experiences. If you like clean code, helpful moderation, and delightful UX, you will fit in well.</p>
+        <p>Send a thoughtful application. Show what you have built or how you help teams thrive. We reply quickly when there is a match.</p>
+        <div class="timeline" style="margin-top:12px">
+          <div class="step">
+            <h6>Submit application</h6>
+            <p>Fill the form with your details and any links that demonstrate your work.</p>
+          </div>
+          <div class="step">
+            <h6>Discord triage</h6>
+            <p>The webhook posts your embed to our staff channel with a unique ticket id.</p>
+          </div>
+          <div class="step">
+            <h6>Chat and trial</h6>
+            <p>If selected, we chat on Discord and may offer a concise trial task.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-lite reveal">
+        <h3 style="margin-top:0">Snapshot</h3>
+        <div class="stats" style="margin-top:8px">
+          <div class="stat-box">
+            <h3 id="s1">0</h3>
+            <p>applications processed</p>
+          </div>
+          <div class="stat-box">
+            <h3 id="s2">0%</h3>
+            <p>response within 48h</p>
+          </div>
+          <div class="stat-box">
+            <h3 id="s3">0</h3>
+            <p>active collaborators</p>
+          </div>
+        </div>
+        <div class="quote" style="margin-top:14px">
+          <p>Clear process and respectful feedback. The team moves quickly and communicates well.</p>
+          <div class="by">community member</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="section wrap">
+    <h3 class="center" style="margin:0 0 14px">How we review</h3>
+    <div class="grid-3 tiles">
+      <div class="card tile reveal" data-tilt>
+        <div class="shine"></div>
+        <h4>Signal first</h4>
+        <p>We look for examples of thoughtful work or helpful community actions.</p>
+      </div>
+      <div class="card tile reveal" data-tilt>
+        <div class="shine"></div>
+        <h4>Fast loops</h4>
+        <p>We aim for quick reviews, especially when portfolios are concise and focused.</p>
+      </div>
+      <div class="card tile reveal" data-tilt>
+        <div class="shine"></div>
+        <h4>Respect</h4>
+        <p>We value kindness and clarity. Even when it is a no, we try to be direct and helpful.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="apply" class="section wrap">
+    <div class="card reveal" data-tilt>
+      <h3>Application form</h3>
+      <form id="appForm">
+        <div class="form-grid">
+          <label>
+            <span>Role track</span>
+            <select name="role_track" required>
+              <option value="" disabled selected>Select a role</option>
+              <option>Developer</option>
+              <option>Moderator</option>
+              <option>Builder/Designer</option>
+              <option>Marketing/Comms</option>
+            </select>
+          </label>
+          <label>
+            <span>Name</span>
+            <input name="name" required />
+          </label>
+          <label>
+            <span>Discord</span>
+            <input name="discord" placeholder="user#0000 or @user" required />
+          </label>
+          <label>
+            <span>Age</span>
+            <input name="age" inputmode="numeric" />
+          </label>
+          <label>
+            <span>Timezone</span>
+            <input name="timezone" placeholder="EST, CET, etc." />
+          </label>
+          <label class="full">
+            <span>Experience and skills</span>
+            <textarea name="experience" placeholder="What have you built or moderated? Links welcome."></textarea>
+          </label>
+          <label class="full">
+            <span>Additional notes</span>
+            <textarea name="notes" placeholder="Anything else we should know"></textarea>
+          </label>
+        </div>
+        <div class="submit-row">
+          <button class="cta" type="submit" id="submitBtn">Submit application</button>
+          <span id="status" class="status"></span>
+        </div>
+        <p class="status" style="margin-top:8px">By submitting, you consent to us storing your information for recruiting purposes.</p>
+      </form>
+    </div>
+  </section>
+
+  <section id="faq" class="section wrap">
+    <h3 class="center" style="margin:0 0 14px">FAQ</h3>
+    <div class="faq">
+      <div class="qa reveal">
+        <div class="q"><span>How long does review take?</span><span>⌄</span></div>
+        <div class="a"><p>Most reviews happen within a couple of days. If you include links and context, it is faster.</p></div>
+      </div>
+      <div class="qa reveal">
+        <div class="q"><span>Do I need prior experience?</span><span>⌄</span></div>
+        <div class="a"><p>Not necessarily. Show willingness to learn and examples of initiative, even small ones.</p></div>
+      </div>
+      <div class="qa reveal">
+        <div class="q"><span>Can I reapply?</span><span>⌄</span></div>
+        <div class="a"><p>Yes. If it was not a fit, feel free to reapply after you have grown your skills or portfolio.</p></div>
+      </div>
+      <div class="qa reveal">
+        <div class="q"><span>Where will you contact me?</span><span>⌄</span></div>
+        <div class="a"><p>We typically reach out via Discord using the tag you provide in the application.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Zkoo Studio</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
